@@ -1,0 +1,136 @@
+html {
+  background-color: rgb(186, 166, 165);
+}
+
+.heading {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 9px;
+  width: 50%;
+  font-size: xx-large;
+}
+
+.textArea {
+  resize: none;
+  display: block;
+  margin-top: 50px;
+  margin-left: 20px;
+  border-radius: 12px;
+}
+
+
+
+.mainContent {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  margin: 10px;
+
+
+}
+
+.date {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.912);
+  text-align: right;
+  margin-top: 50px;
+  margin-right: 10px;
+  font-weight: lighter;
+}
+
+.smilies {
+  width: auto;
+  margin: 0px 15px;
+  margin-top: -15px;
+  padding-top: 6px;
+  height: auto !important;
+  font-size: xx-large;
+}
+
+.smiliesSpan {
+  color: rgba(0, 0, 0, 0.349);
+  transition: 0.4s;
+}
+
+.smiliesSpan:hover {
+  color: rgba(255, 255, 255);
+  cursor: pointer;
+}
+
+.Feel {
+  width: auto;
+  margin: 10px 21px;
+  height: auto !important;
+  font-size: 20px;
+}
+
+
+.ContentArea {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: auto;
+  margin: 10px 20px;
+  padding-top: 6px;
+  height: auto !important;
+  word-wrap: break-word;
+  border-radius: 12px;
+}
+
+
+.addButton {
+  width: 70px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.deleteButton {
+  width: 70px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+  margin-left: 10px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.addButton:hover {
+  background-color: lightgreen;
+}
+
+.addButton:active {
+  background-color: green;
+  color: black;
+}
+
+
+.deleteButton:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.deleteButton:active {
+  background-color: red;
+
+}
+
+
+
+.textArea {
+  resize: both !important;
+}
+
+.masthead {
+  background-color: rgb(186, 166, 165);
+}

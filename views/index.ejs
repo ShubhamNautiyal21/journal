@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/index.css" type="text/css">
+
+</head>
+
+<body>
+    <main class="masthead d-flex align-items-center">
+        <div class="heading">
+            <%=heading%>
+        </div>
+
+
+        <form action="/" method="POST">
+            <textarea name="content" class="textArea" id="" cols="45" rows="7" placeholder="Enter your thoughts here..."
+                required></textarea> <button class="addButton" type="submit">ADD</button>
+            <div class="Feel">
+                Add a smiley to mark, how you feel.
+            </div>
+
+            <input type="hidden" name="smileyParent" class="smileyParent">
+
+            <div class="smilies" id="smileyArea" name="smileyParent">
+                <span class="smiliesSpan" id="smileyId0" onclick="smileyClick(this.id,0)">&#128556;</span>
+                <span class="smiliesSpan" id="smileyId1" onclick="smileyClick(this.id,1)">&#128512;</span>
+                <span class="smiliesSpan" id="smileyId2" onclick="smileyClick(this.id,2)">&#128514;</span>
+                <span class="smiliesSpan" id="smileyId3" onclick="smileyClick(this.id,3)">&#128521;</span>
+                <span class="smiliesSpan" id="smileyId4" onclick="smileyClick(this.id,4)">&#128523;</span>
+                <span class="smiliesSpan" id="smileyId5" onclick="smileyClick(this.id,5)">&#128526;</span>
+                <span class="smiliesSpan" id="smileyId6" onclick="smileyClick(this.id,6)">&#128529;</span>
+                <span class="smiliesSpan" id="smileyId7" onclick="smileyClick(this.id,7)">&#128530;</span>
+                <span class="smiliesSpan" id="smileyId8" onclick="smileyClick(this.id,8)">&#128531;</span>
+                <span class="smiliesSpan" id="smileyId9" onclick="smileyClick(this.id,9)">&#128151;</span>
+
+            </div>
+
+        </form>
+
+        <div>
+
+            <div class="ContentArea">
+
+
+                <% if(data.length> 0){ %>
+                    <% data.forEach(item=>{ %>
+                        <div class="smilies">
+                            <% if(item.smiley==0){ %>
+                                <div style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;"> &#128556;</div>
+                                <%}%>
+                                    <% if(item.smiley==1){ %>
+                                        <div style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                            &#128512;
+                                        </div>
+                                        <%}%>
+                                            <% if(item.smiley==2){ %>
+                                                <div style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                    &#128514;</div>
+                                                <%}%>
+                                                    <% if(item.smiley==3){ %>
+                                                        <div
+                                                            style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                            &#128521;</div>
+                                                        <%}%>
+                                                            <% if(item.smiley==4){ %>
+                                                                <div
+                                                                    style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                                    &#128523;</div>
+                                                                <%}%>
+                                                                    <% if(item.smiley==5){ %>
+                                                                        <div
+                                                                            style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                                            &#128526;</div>
+                                                                        <%}%>
+                                                                            <% if(item.smiley==6){ %>
+                                                                                <div
+                                                                                    style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                                                    &#128529;</div>
+                                                                                <%}%>
+                                                                                    <% if(item.smiley==7){ %>
+                                                                                        <div
+                                                                                            style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                                                            &#128530;</div>
+                                                                                        <%}%>
+                                                                                            <% if(item.smiley==8){ %>
+                                                                                                <div
+                                                                                                    style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                                                                    &#128531;</div>
+                                                                                                <%}%>
+                                                                                                    <% if(item.smiley==9){
+                                                                                                        %>
+                                                                                                        <div
+                                                                                                            style="margin-top: 10px; margin-left: -10px; margin-bottom: 20px;">
+                                                                                                            &#128151;
+                                                                                                        </div>
+                                                                                                        <%}%>
+                        </div>
+                        <p class="mainContent">
+                            <%= item.content %>
+                        </p>
+                        <p class="date">
+                            <%= item.date %>
+                        </p>
+                        <button class="deleteButton" id="<%=item.id %>" onclick="Delete(this.id)"> DELETE</button>
+
+                        <hr class="hr">
+                        <% }) %>
+                            <% } else{ %>
+                                <% } %>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    let smiliesList = document.querySelectorAll('.smiliesSpan')
+    smileyClick('smileyId0', 0)
+    function smileyClick(clickedId, value) {
+
+        for (let i = 0; i < smiliesList.length; ++i) {
+            if (smiliesList[i].id == clickedId) {
+                smiliesList[i].className = "checkedSmiley";
+                document.querySelector('.smileyParent').value = value;
+
+            }
+            else {
+                smiliesList[i].className = "smiliesSpan";
+            }
+        }
+    }
+    function Delete(clickedId) {
+        AsyncDelete(clickedId)
+            .then(data => window.location.href = data)
+            .catch(err => console.log(err));
+    }
+    async function AsyncDelete(clickedId) {
+        const url = `/${clickedId}`;
+        //
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+
+        return response;
+    }
+
+</script>
+
+</html>

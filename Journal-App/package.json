@@ -1,0 +1,25 @@
+{
+  "name": "journal",
+  "version": "1.0.0",
+  "description": "It is just a journal app to track the activity of a user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js -e js,html,ejs,css"
+  },
+  "author": "Shubham Nautiyal",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cryptr": "^6.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "localStorage": "^1.0.4",
+    "mongoose": "^6.5.3",
+    "nconf": "^0.12.0",
+    "nodemon": "^2.0.19"
+  }
+}
